@@ -31,7 +31,7 @@ git clone https://github.com/prantomollick/dashboard-project-app-shadcn
 2. Install dependencies:
 
 ```bash
-cd dashboard-project-shadcn
+cd dashboard-project-app-shadcn
 npm install
 ```
 
