@@ -7,7 +7,7 @@ import {
     ChartTooltipContent,
     type ChartConfig,
 } from "@/components/ui/chart";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 const chartData = [
     { month: "January", desktop: 186, mobile: 80 },
@@ -21,23 +21,23 @@ const chartData = [
 const chartConfig = {
     desktop: {
         label: "Desktop",
-        color: "var( --chart-1)",
+        color: "var( --chart-2)",
     },
     mobile: {
         label: "Mobile",
-        color: "var( --chart-4)",
+        color: "var( --chart-1)",
     },
 } satisfies ChartConfig;
 
 const AppAreaChart = () => {
     return (
         <div>
-            <h1 className="text-lg">Total Revenue</h1>
+            <h1 className="text-lg font-medium mb-6">Total visitors</h1>
             <ChartContainer
                 config={chartConfig}
                 className="min-h-[200px] w-full"
             >
-                <BarChart accessibilityLayer data={chartData}>
+                <AreaChart accessibilityLayer data={chartData}>
                     <CartesianGrid vertical={false} />
                     <XAxis
                         dataKey={"month"}
@@ -49,17 +49,62 @@ const AppAreaChart = () => {
                     <YAxis tickLine={false} tickMargin={10} axisLine={false} />
                     <ChartTooltip content={<ChartTooltipContent />} />
                     <ChartLegend content={<ChartLegendContent />} />
-                    <Bar
-                        dataKey="desktop"
-                        fill="var(--color-desktop)"
-                        radius={4}
-                    />
-                    <Bar
+
+                    <defs>
+                        <linearGradient
+                            id="fillDesktop"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+                            <stop
+                                offset="5%"
+                                stopColor="var(--color-desktop)"
+                                stopOpacity={0.8}
+                            />
+                            <stop
+                                offset="95%"
+                                stopColor="var(--color-desktop)"
+                                stopOpacity={0.1}
+                            />
+                        </linearGradient>
+                        <linearGradient
+                            id="fillMobile"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+                            <stop
+                                offset="5%"
+                                stopColor="var(--color-mobile)"
+                                stopOpacity={0.8}
+                            />
+                            <stop
+                                offset="95%"
+                                stopColor="var(--color-mobile)"
+                                stopOpacity={0.1}
+                            />
+                        </linearGradient>
+                    </defs>
+                    <Area
                         dataKey="mobile"
-                        fill="var(--color-mobile)"
-                        radius={4}
+                        type="natural"
+                        fill="url(#fillMobile)"
+                        fillOpacity={0.4}
+                        stroke="var(--color-mobile)"
+                        stackId="a"
                     />
-                </BarChart>
+                    <Area
+                        dataKey="desktop"
+                        type="natural"
+                        fill="url(#fillDesktop)"
+                        fillOpacity={0.4}
+                        stroke="var(--color-desktop)"
+                        stackId="a"
+                    />
+                </AreaChart>
             </ChartContainer>
         </div>
     );
