@@ -25,16 +25,16 @@ This project is a customizable dashboard built using Next.js, React, and Tailwin
 ### Dark Mode
 
 -   Dashboard Page
-    [![Alt Text](./dashboard.png)](https://example.com)
+    [![Alt Text](./dashboard.png)](https://dashboard-project-app-shadcn.vercel.app/)
 
 -   User Page
-    [![Alt Text](./user-page.png)](https://example.com)
+    [![Alt Text](./user-page.png)](https://dashboard-project-app-shadcn.vercel.app/users/jhon-doe)
 
 -   User Input Form
-    [![Alt Text](./user-input.png)](https://example.com)
+    [![Alt Text](./user-input.png)](https://dashboard-project-app-shadcn.vercel.app/users/jhon-doe)
 
 -   Data Table Page
-    [![Alt Text](./data-table.png)](https://example.com)
+    [![Alt Text](./data-table.png)](https://dashboard-project-app-shadcn.vercel.app/payments)
 
 ### Light Mode
 
