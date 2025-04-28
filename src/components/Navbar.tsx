@@ -61,8 +61,13 @@ const Navbar = () => {
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
-                            <User className="h-[1.2rem] w-[1.2rem] mr-2" />
-                            Profile
+                            <Link
+                                href="/users/jhon-doe"
+                                className="flex items-center"
+                            >
+                                <User className="h-[1.2rem] w-[1.2rem] mr-2" />
+                                Profile
+                            </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Settings className="h-[1.2rem] w-[1.2rem] mr-2" />
