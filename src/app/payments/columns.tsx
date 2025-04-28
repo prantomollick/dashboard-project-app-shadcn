@@ -8,6 +8,7 @@ export type TPayment = {
 };
 
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -21,6 +22,26 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
 export const columns: ColumnDef<TPayment>[] = [
+    {
+        id: "select",
+        header: ({ table }) => (
+            <Checkbox
+                onCheckedChange={(value) =>
+                    table.toggleAllPageRowsSelected(!!value)
+                }
+                checked={
+                    table.getIsAllPageRowsSelected() ||
+                    (table.getIsSomePageRowsSelected() && "indeterminate")
+                }
+            />
+        ),
+        cell: ({ row }) => (
+            <Checkbox
+                onCheckedChange={(value) => row.toggleSelected(!!value)}
+                checked={row.getIsSelected()}
+            />
+        ),
+    },
     {
         accessorKey: "username",
         header: "User",
