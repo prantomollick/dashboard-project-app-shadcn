@@ -20,6 +20,36 @@ This project is a customizable dashboard built using Next.js, React, and Tailwin
 -   **Radix UI**
 -   **Lucide**
 
+## Screenshots Dark and Light Mode
+
+### Dark Mode
+
+-   Dashboard Page
+    [![Alt Text](./dashboard.png)](https://example.com)
+
+-   User Page
+    [![Alt Text](./user-page.png)](https://example.com)
+
+-   User Input Form
+    [![Alt Text](./user-input.png)](https://example.com)
+
+-   Data Table Page
+    [![Alt Text](./data-table.png)](https://example.com)
+
+### Light Mode
+
+-   Dashboard Page
+    ![Alt Text](./dashboard-light.png)
+
+-   User Page
+    ![Alt Text](./user-page-light.png)
+
+-   User Input Form
+    ![Alt Text](./user-input-light.png)
+
+-   Data Table Page
+    ![Alt Text](./data-table-light.png)
+
 ## Installation
 
 1. Clone the repository:
